@@ -28,6 +28,8 @@ main section.categories-show {
         padding: 0.375rem 0.75rem;
         font-size: 1rem;
         border-radius: 0.25rem;
+        pointer-events: none;
+        cursor: default;
       }
 
       a {
@@ -49,7 +51,7 @@ main section.categories-show {
           color: white;
         }
 
-        button {
+        .cart-btn {
           background: white;
           color: rgba(0, 130, 29, 0.7);
         }
