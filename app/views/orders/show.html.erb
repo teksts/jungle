@@ -18,7 +18,6 @@
           </tr>
         </thead>
         <tbody>
-        <% p @order.line_items %>
           <% @order.line_items.each do |line_item| %>
             <%= render 'line_item', product: line_item.product, quantity: line_item.quantity.to_i, price: line_item.total_price_cents / 100.0 %>
           <% end %>
