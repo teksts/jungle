@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  get 'sessions/new'
+  get 'sessions/create'
+  get 'sessions/destroy'
+  get 'users/new'
+  get 'users/create'
   root to: 'products#index'
 
   resources :products, only: [:index, :show]
@@ -14,6 +19,16 @@ Rails.application.routes.draw do
   resource :about, only: [:show]
 
   resources :orders, only: [:create, :show]
+
+  # user registration
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
+
+  # user login
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  get '/logout' => 'sessions#destroy'
+
 
   namespace :admin do
     root to: 'dashboard#show'
