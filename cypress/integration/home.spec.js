@@ -25,4 +25,12 @@ describe('Jungle', () => {
   it("There is 2 products on the page", () => {
     cy.get(".products article").should("have.length", 2);
   });
+
+  it("Should have buttons for products that add to cart", () => {
+    cy.get('.end-0').contains('(0)').should('exist')
+    
+    cy.get(".cart-btn").first().click({ force: true })
+
+    cy.get('.end-0').contains('(1)').should('exist')
+  })
 })
