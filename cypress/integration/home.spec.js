@@ -17,9 +17,11 @@ describe('Jungle', () => {
         cy.get('h2').should('have.text', 'Where you can find any plants!')
       })
   })
+
   it("has a products on the page", () => {
     cy.get(".products article").should("be.visible");
   });
+
   it("There is 2 products on the page", () => {
     cy.get(".products article").should("have.length", 2);
   });
